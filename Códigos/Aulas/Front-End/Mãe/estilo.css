@@ -1,0 +1,32 @@
+body {
+
+    background-image: url(https://media.cntraveler.com/photos/591cca1def06530b93a51f2b/master/w_4608,h_3456,c_limit/GettyImages-498286717.jpg);
+    background-size: cover;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.painel {
+
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    padding-left: 40px;
+    margin: auto;
+    margin-top: 70px;
+    border: 1px solid black;
+
+}
+
+.botao {
+
+    background-color: violet;
+    color: black;
+    border: none;
+    height: 40px;
+    width: 60px;
+    border-radius: 10px;
+
+}

@@ -1,0 +1,128 @@
+.container {
+
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-image: url('https://imagine.gsfc.nasa.gov/hst_bday/images/february-23-2019-galaxies-in-the-goods-north-field.png');
+    display: flex;
+
+}
+
+
+.quadrado {
+
+    width: 200px;
+    height: 200px;
+
+    text-align: center;
+    font-size: 150px;
+
+    border: 5px solid white;
+    border-radius: 20px;
+
+    
+}
+
+.jogo {
+
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    margin: 20px auto;
+
+}
+
+body {
+
+    text-align: center;
+    background-image: linear-gradient(to right, purple, black); 
+    font-family: fantasy;
+    
+}
+
+span {
+
+    color: white;
+    font-size: 40px;
+
+}
+
+.botao {
+    
+    border-radius: 50px;
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+    font-size: 35px;
+    margin: 10px;
+    
+
+}
+
+.botao:hover {
+
+    color: red;
+
+}
+
+#q1 {
+
+    background-color: rosybrown;
+
+}
+
+#q2 {
+
+    background-color: blue;
+
+}
+
+#q3 {
+
+    background-color: red;
+
+}
+
+#q4 {
+
+    background-color: green;
+
+}
+
+#q5 {
+
+    background-color: yellow;
+
+}
+
+#q6 {
+
+    background-color: pink;
+
+}
+
+#q7 {
+
+    background-color: orange;
+    
+}
+
+#q8 {
+
+    background-color: black;
+
+}
+
+#q9 {
+
+    background-color: purple;
+
+}
+
+.direita {
+
+    color: white;
+
+}

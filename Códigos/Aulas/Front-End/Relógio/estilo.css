@@ -1,0 +1,65 @@
+body {
+
+    text-align: center;
+
+}
+
+.painel {
+    border: 1px solid black;
+    height: 300px;
+    width: 600px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px black;
+    margin: 100px auto;
+    font-size: 60px;
+    font-family: Bubbler One; 
+    text-align: center;
+    background-image: linear-gradient(rgb(248, 248, 255), rgb(124, 124, 124));
+
+}
+
+#relogio {
+    background-color: white;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius:50%;
+    position: relative;
+    margin: 50px auto;
+
+}
+
+#ponteiroHora {
+    background-color: black;
+    position: absolute;
+    transform-origin: bottom center;
+    width: 5px;
+    height: 60px;
+    top: 40px;
+    left: 97px;
+
+}
+
+#ponteiroMin {
+
+    background-color: yellow;
+    position: absolute;
+    transform-origin: bottom center;
+    width: 4px;
+    height: 90px;
+    top: 10px;
+    left: 98px;
+
+}
+
+#ponteiroSeg {
+
+    background-color: rgb(255, 0, 0);
+    position: absolute;
+    transform-origin: bottom center;
+    width: 2px;
+    height: 100px;
+    top: 2px;
+    left: 98px;
+
+}

@@ -1,0 +1,50 @@
+/* Essa é a parte da foto. */
+.foto {
+    border: 2px solid black;
+    border-radius: 100%;
+
+}
+
+body {
+    background-image: linear-gradient(rgb(141, 97, 141), rgb(113, 113, 218));
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+.menu {
+    background-color: black;
+    border-radius: 20px;
+}
+
+.menu ul li {
+    display: inline;
+}
+
+.menu ul li a {
+    color: white;
+    padding: 20px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    background-color: blue;
+    font-size: 20px;
+    border-radius: 20px;
+    transition-duration: 2s;
+}
+
+.tabela {
+    text-align: left;
+    background-color: white;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.tabela tr td:hover {
+    font-size: 20px;
+    color: blue;
+}

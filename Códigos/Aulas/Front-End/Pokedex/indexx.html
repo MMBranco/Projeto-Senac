@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex</title>
+
+  <link rel="stylesheet" href="estilo.css">
+  <link href="https://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <h1 class="titulo"> Poké - dex </h1>
+
+  <div class="pokedex">
+
+    <div id="tela" class="tela">
+      
+    </div>
+
+    <input class="input" type="text" id="entrada" placeholder="Digite o Pokémon...">
+    <button onclick="buscar()" class="botao"> Pesquisar </button>
+
+    <br><br>
+
+    <div class="botoes">
+      <button onclick="anterior()" class="botao"> Anterior </button>
+      <button onclick="proximo()" class="botao"> Próximo </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

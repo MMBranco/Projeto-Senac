@@ -1,0 +1,62 @@
+/* Parte que faz a mágica. */
+
+body {
+    text-align: center;
+    background-image: linear-gradient(to left,white, grey, white);
+    font-size: 16px;
+    
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu {
+    background-color: black;
+    border-radius: 20px;
+}
+
+.menu ul li {
+    display: inline;
+}
+
+.menu ul li a {
+    color: white;
+    padding: 20px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    background-color: red;
+    font-size: 20px;
+    border-radius: 20px;
+    transition-duration: 2s;
+}
+
+.foto {
+    border: 2px solid black;
+    border-radius: 20%;
+}
+
+.tabela tr td {
+    background-color: white;
+}
+
+.tabela tr td:hover {
+    font-size: 20px;
+    color: red;
+}
+
+.tabela {
+    margin: 20px auto;
+}
+
+li {
+    color: blue;
+}
+
+.texto {
+    font-size: 20px;
+    color: red 
+}
