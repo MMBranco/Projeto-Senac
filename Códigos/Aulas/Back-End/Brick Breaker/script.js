@@ -4,25 +4,29 @@ var desenho = canvas.getContext("2d");
 
 //configurar raquete
 var raqueteAltura = 10;
-var raqueteLargura = 75;
+var raqueteLargura = 90;
 var raqueteX = (canvas.width - raqueteLargura) / 2; // Centraliza a raquete
-var velocidadeRaquete = 10;
+var velocidadeRaquete = 20;
 
 //configurar a bola
-var bolaRadius = 10;
+var bolaRadius = 3;
 var bolaX = canvas.width / 2;
 var bolaY = canvas.height - 30;
-var bolaDX = 2;                         // Direção de bola em X (esquerda/direita)
-var bolaDY = -2;                        // Direção da bola em Y (acima/abaixo)
+var bolaDX = 6;                         // Direção de bola em X (esquerda/direita)
+var bolaDY = -6;                        // Direção da bola em Y (acima/abaixo)
 
 var tijolosPorLinha = 3;
-var tijolosPorColuna = 6;
-var tijoloLargura = 75;
+var tijolosPorColuna = 8;
+var tijoloLargura = 73;
 var tijoloAltura = 20;
-var tijoloEspacamento = 10;
-var espacamentoSuperiorQuadro = 30;
-var espacamentoEsquerdoQuadro = 30;
+var tijoloEspacamento = 2;
+var espacamentoSuperiorQuadro = 1;
+var espacamentoEsquerdoQuadro = 1;
 var tijolos = []; // Lista com tijolos.
+
+var totalPotuacao = tijolosPorLinha * tijolosPorColuna * progressao;
+var pontuacao = 0;
+var progressao = 100;
 
 for(var coluna=0; coluna < tijolosPorColuna; coluna++ ){
     tijolos[coluna] = [] ;//0 1 2 3 4 5
@@ -70,7 +74,7 @@ function subirDaTecla(tecla){
 function desenharRaquete(){
     desenho.beginPath(); // Iniciar desenho da raquete
     desenho.rect(raqueteX, canvas.height - raqueteAltura, raqueteLargura, raqueteAltura);
-    desenho.fillStyle = "blue";
+    desenho.fillStyle = "red";
     desenho.fill();
     desenho.closePath();
 }
@@ -78,8 +82,8 @@ function desenharRaquete(){
 function desenharBola(){
     desenho.beginPath();
     desenho.arc(bolaX, bolaY, bolaRadius, 0, Math.PI * 2);
-    desenho.fillStyle = "black";
-    desenho.fill();
+    desenho.fillStyle = "white";
+    desenho.fill(); 
     desenho.closePath();
 }
 
@@ -99,7 +103,7 @@ function desenharTijolos(){
 
                 desenho.beginPath();
                 desenho.rect(tijoloX, tijoloY, tijoloLargura, tijoloAltura);
-                desenho.fillStyle = "green";
+                desenho.fillStyle = "white";
                 desenho.fill();
                 desenho.closePath();
             }
@@ -115,17 +119,39 @@ function detectarColisao(){
 
             if(tijolo.ativo === 1){
 
-                if(bolaX > tijolo.x
-                    && bolaX < tijolo.x + tijoloLargura
-                    && bolaY > tijolo.y 
-                    && bolaY < tijolo.y + tijoloAltura){
+                if(bolaX + bolaRadius > tijolo.x
+                    && bolaX - bolaRadius < tijolo.x + tijoloLargura
+                    && bolaY + bolaRadius > tijolo.y 
+                    && bolaY - bolaRadius < tijolo.y + tijoloAltura){
                         bolaDY = -bolaDY;
                         tijolo.ativo = 0;
+                        tela = document.getElementById("ponto");
+                        pontuacao = pontuacao + progressao;
+                        tela.innerHTML = "Score: " + pontuacao;
+
+                        if(pontuacao === totalPotuacao) {
+                            window.location.reload();
+                        }
                 }
             }
         }
     }
 }
+
+function gameOver(){
+    var gameOver = document.getElementById("gameOver");
+    gameOver.style.display = "block";
+}
+
+function reiniciar(){
+    document.location.reload();
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "r" || event.key === "R") {
+      location.reload();
+    }
+  });
 
 function desenhar(){
 
@@ -133,7 +159,7 @@ function desenhar(){
     desenharRaquete();
     desenharBola();
     desenharTijolos();
-    detectarColisao(    );
+    detectarColisao();
 
     // Analisa colisão do eixoX, colisão cantos direita/esquerda
     if(bolaX + bolaDX > canvas.width - bolaRadius || bolaX + bolaDX < bolaRadius){
@@ -145,12 +171,13 @@ function desenhar(){
         bolaDY = -bolaDY;
     }
 
-    else if(bolaY + bolaDY > canvas.height - bolaRadius){
+    else if(bolaY + bolaDY > canvas.height - bolaRadius - raqueteAltura){
         
         if(bolaX > raqueteX && bolaX < raqueteX + raqueteLargura){
             bolaDY = -bolaDY;
         }else{
-            document.location.reload(); // Reinicia caso a bola passe a base
+            // document.location.reload(); // Reinicia caso a bola passe a base
+            gameOver()
         }
     }
 
