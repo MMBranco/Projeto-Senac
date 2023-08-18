@@ -1,0 +1,34 @@
+body {
+    background-image: url(https://lh3.googleusercontent.com/q9_vuooVCTttUr2TLpGzVigeo9B6CxvF1ZJfpAkmVt6qHepLovs3rmmVPlJloi_aCnQpjG_RE46weV9J_YJc6mh-zBtRFsCh_wo=s400);
+}
+
+ul {
+    list-style: none;
+}
+
+.painel {
+    border: 1px solid black;
+    width: 600px;
+    margin-left: auto;      /* Margem da esquerda */
+    margin-right: auto;     /* Margem da direita */
+    text-align: center;
+    border-radius: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: white;
+    height: auto;
+    margin-top: 25px;
+}
+
+input {
+    width: 200px;
+    height: 39px;
+    border: 1px solid black;
+    border-radius: 6px;
+}
+
+.botao {
+    width: 60px;
+    height: 39px;
+    border: 1px solid black;
+    border-radius: 6px; 
+}
